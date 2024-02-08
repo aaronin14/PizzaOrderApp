@@ -4,4 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pizza Order"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_title"
+        app:srcCompat="@drawable/pizza_crust" />
+
+    <TextView
+        android:id="@+id/pizza_type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose Your Pizza Type:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_title" />
+
+    <RadioGroup
+        android:id="@+id/pizza_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_type_text">
+
+        <RadioButton
+            android:id="@+id/pepperoni_rbutton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Pepperoni"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <RadioButton
+            android:id="@+id/bbq_chicken_rbutton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="BBQ Chicken" />
+
+        <RadioButton
+            android:id="@+id/margherita_rbutton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Margherita (premium)" />
+
+        <RadioButton
+            android:id="@+id/hawaiian_rbutton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Hawaiian (premium)" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/pizza_size_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose Pizza Size:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_radio_group" />
+
+    <ListView
+        android:id="@+id/size_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_size_text" />
+
+    <TextView
+        android:id="@+id/toppings_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Extra Toppings:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/size_spinner" />
+
+    <CheckBox
+        android:id="@+id/tomatoes_chbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tomatoes($1)"
+        app:layout_constraintEnd_toStartOf="@+id/mushrooms_chbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toppings_text" />
+
+    <CheckBox
+        android:id="@+id/mushrooms_chbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mushrooms($2.3)"
+        app:layout_constraintBottom_toBottomOf="@+id/tomatoes_chbox"
+        app:layout_constraintEnd_toStartOf="@+id/olives_chbox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tomatoes_chbox" />
+
+    <CheckBox
+        android:id="@+id/olives_chbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olives($1.7)"
+        app:layout_constraintBottom_toBottomOf="@+id/mushrooms_chbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mushrooms_chbox" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
