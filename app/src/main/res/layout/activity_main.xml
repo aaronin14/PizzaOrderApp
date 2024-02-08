@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,26 +51,26 @@
         <RadioButton
             android:id="@+id/pepperoni_rbutton"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="Pepperoni"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <RadioButton
             android:id="@+id/bbq_chicken_rbutton"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="BBQ Chicken" />
 
         <RadioButton
             android:id="@+id/margherita_rbutton"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="Margherita (premium)" />
 
         <RadioButton
             android:id="@+id/hawaiian_rbutton"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:text="Hawaiian (premium)" />
     </RadioGroup>
 
@@ -86,13 +86,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pizza_radio_group" />
 
-    <ListView
+    <Spinner
         android:id="@+id/size_spinner"
         android:layout_width="0dp"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="509dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pizza_size_text" />
@@ -109,36 +111,86 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/size_spinner" />
 
-    <CheckBox
-        android:id="@+id/tomatoes_chbox"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Tomatoes($1)"
-        app:layout_constraintEnd_toStartOf="@+id/mushrooms_chbox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toppings_text" />
-
-    <CheckBox
-        android:id="@+id/mushrooms_chbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mushrooms($2.3)"
-        app:layout_constraintBottom_toBottomOf="@+id/tomatoes_chbox"
-        app:layout_constraintEnd_toStartOf="@+id/olives_chbox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tomatoes_chbox" />
-
-    <CheckBox
-        android:id="@+id/olives_chbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olives($1.7)"
-        app:layout_constraintBottom_toBottomOf="@+id/mushrooms_chbox"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/mushrooms_chbox" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toppings_text">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/tomatoes_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tomatoes($1)" />
+
+            <CheckBox
+                android:id="@+id/mushrooms_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mushrooms($2.3)" />
+
+            <CheckBox
+                android:id="@+id/olives_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Olives($1.7)" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/onion_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onions($1.25)" />
+
+            <CheckBox
+                android:id="@+id/brocoli_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brocoli($1.8)" />
+
+            <CheckBox
+                android:id="@+id/spinach_chbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spinach($2)" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/spicy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Extra Spicy:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Switch
+        android:id="@+id/spicy_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="No $0.00"
+        app:layout_constraintBottom_toBottomOf="@+id/spicy_text"
+        app:layout_constraintStart_toEndOf="@+id/spicy_text" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
